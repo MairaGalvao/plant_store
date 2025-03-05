@@ -1,42 +1,45 @@
 import React, { useState } from "react";
 import "../style/Store.css";
-const plantImage =
-  "https://images.unsplash.com/photo-1604866830513-d54766457f45?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+// Define the images
+const plantImages = [
+  "https://images.unsplash.com/photo-1525498128493-380d1990a112?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1585598117791-876ce25c1884?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1669688397378-7631f068fa96?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
 
 function Store({ updateCartCount }) {
   const [quantity, setQuantity] = useState(0);
+  const [currentImage, setCurrentImage] = useState(plantImages[0]);
 
   const handleIncrement = () => setQuantity(quantity + 1);
   const handleDecrement = () => setQuantity(quantity > 0 ? quantity - 1 : 0);
 
   const handleAddToCart = () => {
     if (quantity > 0) {
-      // Call the updateCartCount function from props and add the quantity to the cart
       updateCartCount(quantity);
-      setQuantity(0); // Reset the quantity after adding to cart
+      setQuantity(0);
     }
+  };
+
+  const handleImageClick = (image) => {
+    setCurrentImage(image);
   };
 
   return (
     <section className="store-container">
       <div className="image-gallery">
-        <img src={plantImage} alt="Plant" className="large-image" />
+        <img src={currentImage} alt="Plant" className="large-image" />
         <div className="small-images">
-          <img
-            src={`${plantImage}&crop=top`}
-            alt="Plant Close-up 1"
-            className="small-image"
-          />
-          <img
-            src={`${plantImage}&crop=center`}
-            alt="Plant Close-up 2"
-            className="small-image"
-          />
-          <img
-            src={`${plantImage}&crop=bottom`}
-            alt="Plant Close-up 3"
-            className="small-image"
-          />
+          {plantImages.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Plant Close-up ${index + 1}`}
+              className="small-image"
+              onClick={() => handleImageClick(image)}
+            />
+          ))}
         </div>
       </div>
 
