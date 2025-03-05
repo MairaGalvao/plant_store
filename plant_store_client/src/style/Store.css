@@ -1,0 +1,130 @@
+.store-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.image-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.large-image {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.small-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.small-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.discounted-price {
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.save {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid #d1d1d1;
+  width: fit-content;
+}
+
+.quantity-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  transition: background 0.2s ease-in-out;
+}
+
+.quantity-btn:hover {
+  background: #e0e0e0;
+}
+
+.quantity-display {
+  font-size: 22px;
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+  color: #333;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #0056b3;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buy-button:hover {
+  background-color: #004494;
+}
