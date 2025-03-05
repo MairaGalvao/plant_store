@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Store from "./components/Store";
-import "./App.css";
 
 function App() {
   const [cartCount, setCartCount] = useState(0);
